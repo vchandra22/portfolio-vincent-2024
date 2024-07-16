@@ -7,7 +7,20 @@ export default {
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ["Chivo Mono", "sans-serif"],
+                static: ["Ubuntu", "serif"],
+            },
+            colors: {
+                primary: '#151515',
+                secondary1: '#353535',
+                secondary2: '#353535',
+                secondary3: '#0E0E0E',
+                accent: '#57FF5D',
+                accent2: '#708C75',
+            }
+        },
     },
     plugins: [
         require('flowbite/plugin')

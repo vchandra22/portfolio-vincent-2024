@@ -1,23 +1,95 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('frontend.layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="antialiased">
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-</body>
-
-</html>
+@section('content')
+    <section class="bg-center bg-no-repeat bg-primary bg-blend-multiply relative min-h-screen w-full">
+        <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden">
+            <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
+                class="h-full w-full overflow-hidden object-cover">
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-screen-2xl mx-auto w-full relative z-30">
+            <div class="px-4 mx-auto text-start py-24 w-full lg:py-1/2">
+                <h1 class="mb-8 text-5xl font-normal tracking-tighter text-accent md:text-9xl lg:text-9xl">
+                    Full-stack Web Developer_
+                </h1>
+                <p class="mb-12 text-md font-normal font-static text-accent2 lg:text-2xl">
+                    My goal is to <span class="text-accent">write maintainable code, innovative
+                    </span> and <span class="text-accent">user-friendly
+                    </span> digital solutions. Eager to
+                    contribute to a dynamic team and continuously learn in the tech industry.
+                </p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-primary rounded-none border border-accent bg-accent hover:bg-transparent hover:border hover:border-accent hover:text-accent">
+                        Download CV
+                        <svg class="w-8 h-8 ms-2 -rotate-45 rtl:rotate-180" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M11 4h2v12h2v2h-2v2h-2v-2H9v-2h2V4zM7 14v2h2v-2H7zm0 0v-2H5v2h2zm10 0v2h-2v-2h2zm0 0v-2h2v2h-2z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-accent rounded-none border border-accent hover:bg-accent hover:text-secondary1">
+                        See my recents project
+                    </a>
+                </div>
+            </div>
+            <div class="px-4 mx-auto text-start py-24 w-full lg:py-1/2">
+                <div class="px-4 mx-auto text-start py-24 w-full lg:py-1/2">
+                    <div class="grid grid-cols-5 gap-8 justify-start w-full">
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/akar-icons_php-fill.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="php icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/logos_laravel.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="laravel icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/simple-icons_mysql.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="mysql icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/uiw_linux.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="linux icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/devicon-plain_docker.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="docker icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/akar-icons_html-fill.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="html icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/akar-icons_css-fill.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="css icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/akar-icons_javascript-fill.png') }}" class="w-20 h-20"
+                                width="100" height="100" alt="javascript icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/simple-icons_tailwindcss.png') }}" class="w-20 h-20"
+                                width="100" height="100" alt="tailwind icon">
+                        </div>
+                        <div
+                            class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
+                            <img src="{{ asset('assets/icon/ri_bootstrap-fill.png') }}" class="w-20 h-20" width="100"
+                                height="100" alt="bottstrap icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
