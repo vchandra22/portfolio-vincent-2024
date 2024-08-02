@@ -19,6 +19,15 @@ export default {
                 secondary3: '#0E0E0E',
                 accent: '#57FF5D',
                 accent2: '#708C75',
+            },
+            keyframes: {
+                wiggle: {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0' },
+                }
+            },
+            animation: {
+                'wiggle': 'wiggle 1s ease-in-out infinite',
             }
         },
     },
