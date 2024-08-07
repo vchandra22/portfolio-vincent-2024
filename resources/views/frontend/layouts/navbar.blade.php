@@ -1,16 +1,17 @@
 {{-- navbar-lg start --}}
-<nav class="hidden lg:block bg-primary sticky top-0 z-50">
+<nav class="hidden lg:block bg-primary sticky top-0 z-50" data-aos="fade-down" data-aos-delay="200" data-aos-duration="300"
+    data-aos-easing="ease-in-out" data-aos-once="false">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse p-0">
-            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100" height="100"
-                alt="Logo Portfolio Vincent" />
+            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100"
+                height="100" alt="Logo Portfolio Vincent" />
         </a>
         <div class="w-full md:block md:w-auto">
             <ul
                 class="font-medium flex flex-col border rounded-none bg-primary md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-primary xl:text-lg">
                 <li>
                     <a href="#"
-                        class="block py-2 px-3 text-accent hover:text-accent2 rounded-none bg-transparent">About</a>
+                        class="block py-2 px-3 text-accent hover:text-accent2 rounded-none bg-transparent">Home</a>
                 </li>
                 <li>
                     <a href="#"
@@ -41,7 +42,7 @@
                         d="M4 2H2v8h2V2zm16 0h2v8h-2V2zm-6 6h-4V2H4v2h4v4H4v2h4v4H4v2h4v4H4v2h6v-6h4v6h2v-6h4v-2h-4v-4h4V8h-4V2h-2v6zm-4 6v-4h4v4h-4zM20 2h-4v2h4V2zM2 14h2v8H2v-8zm14 6h4v2h-4v-2zm6-6h-2v8h2v-8z"
                         fill="currentColor" />
                 </svg>
-                <span class="text-sm text-accent group-hover:text-primary">About</span>
+                <span class="text-sm text-accent group-hover:text-primary">Home</span>
             </button>
             <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
                 <svg class="w-5 h-5 mb-2 text-accent group-hover:text-primary" aria-hidden="true" fill="none"

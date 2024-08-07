@@ -23,13 +23,16 @@
     {{-- fontawesome --}}
     <script src="https://kit.fontawesome.com/bfb24335ca.js" crossorigin="anonymous"></script>
 
+    {{-- aos --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     {{-- vite resources --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>{{ __(@$pageTitle) }} | {{ get_app_name() }}</title>
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-primary">
     {{-- navbar --}}
     @include('frontend.layouts.navbar')
 
