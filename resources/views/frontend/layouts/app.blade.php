@@ -41,6 +41,9 @@
 
     {{-- footer --}}
     @include('frontend.layouts.footer')
+
 </body>
+{{-- Scripts --}}
+@stack('script')
 
 </html>

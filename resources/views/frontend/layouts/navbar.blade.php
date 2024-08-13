@@ -25,6 +25,18 @@
                     <a href="#"
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">Contact</a>
                 </li>
+                <li>
+                    <form action="{{ route('auth.logout') }}" method="POST"
+                        class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">
+                        @csrf
+                        <button type="submit">
+                            <div class="flex items-center justify-start gap-2">
+                                <span>Logout</span>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </div>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
