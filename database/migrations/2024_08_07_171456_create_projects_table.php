@@ -16,8 +16,9 @@ return new class extends Migration
             $table->uuid('uuid')->index();
             $table->string('title');
             $table->string('slug');
+            $table->string('short_description');
             $table->text('content');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->mediumText('meta_title')->nullable();
             $table->mediumText('meta_description')->nullable();
             $table->mediumText('meta_keyword')->nullable();

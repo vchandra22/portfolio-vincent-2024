@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('web')->group(function () {
     Route::get('/home', [MainIndexController::class, 'index'])->name('main.index');
     Route::get('/project', [MainIndexController::class, 'indexProject'])->name('project.index');
-    Route::get('/sigma-platform', [MainIndexController::class, 'showProject'])->name('project.show');
+    Route::get('/project/{slug}', [MainIndexController::class, 'projectDetail'])->name('project.detail');
 });

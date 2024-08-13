@@ -16,10 +16,10 @@
                     <h2 class="mb-6 text-lg font-semibold text-accent">Navigation</h2>
                     <ul class="text-secondary2 font-medium">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Home</a>
+                            <a href="{{ route('main.index') }}" class="hover:underline">Home</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Project</a>
+                            <a href="{{ route('project.index') }}" class="hover:underline">Project</a>
                         </li>
                         <li class="mb-4">
                             <a href="#" class="hover:underline">Articles</a>
@@ -32,21 +32,21 @@
                 <div>
                     <h2 class="mb-6 text-lg font-semibold text-accent">Follow me</h2>
                     <ul class="text-secondary2 font-medium">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline ">Whatsapp</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline ">Github</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline ">E-mail</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Linkedin</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline ">Instagram</a>
-                        </li>
+                        @foreach ($socialData as $social)
+                            <li class="mb-4">
+                                <a href="{{ $social->link }}"
+                                    class="flex justify-start items-center gap-2 hover:underline">
+                                    <div class="bg-secondary2 p-0.5 rounded-full">
+                                        <img src="{{ $social->gambar ? asset('assets/icon/' . $social->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                            class="text-secondary2 w-3 h-3 md:w-5 md:h-5" width="100" height="100"
+                                            alt="{{ $social->gambar }}">
+                                    </div>
+                                    <span>
+                                        {{ $social->title }}
+                                    </span>
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div>

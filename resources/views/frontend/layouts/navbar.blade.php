@@ -1,6 +1,6 @@
 {{-- navbar-lg start --}}
 <nav class="hidden lg:block bg-primary sticky top-0 z-50" data-aos="fade-down" data-aos-delay="200" data-aos-duration="300"
-    data-aos-easing="ease-in-out" data-aos-once="false">
+    data-aos-easing="ease-in-out" data-aos-once="true">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse p-0">
             <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100"
@@ -10,11 +10,11 @@
             <ul
                 class="font-medium flex flex-col border rounded-none bg-primary md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-primary xl:text-lg">
                 <li>
-                    <a href="#"
+                    <a href="{{ route('main.index') }}"
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none bg-transparent">Home</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('project.index') }}"
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">Projects</a>
                 </li>
                 <li>

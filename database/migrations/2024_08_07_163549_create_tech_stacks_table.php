@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tech_stacks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid')->index();
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }

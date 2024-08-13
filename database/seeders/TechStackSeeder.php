@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\TechStack;
 use Illuminate\Database\Seeder;
 
 class TechStackSeeder extends Seeder
@@ -12,6 +12,9 @@ class TechStackSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        TechStack::create([
+            'id' => 1,
+            'gambar' => 'akar-icons_php-fill.png'
+        ]);
     }
 }

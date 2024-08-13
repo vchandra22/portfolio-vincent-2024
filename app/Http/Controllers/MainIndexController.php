@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MediaSocial;
+use App\Models\Project;
+use App\Models\Skill;
+use App\Models\TechStack;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MainIndexController extends Controller
@@ -12,6 +17,11 @@ class MainIndexController extends Controller
     public function index()
     {
         $data['pageTitle'] = 'Home';
+        $data['userData'] = User::firstOrFail();
+        $data['techData'] = TechStack::latest()->get();
+        $data['socialData'] = MediaSocial::latest()->get();
+        $data['skillData'] = Skill::latest()->get();
+        $data['projectData'] = Project::latest()->get();
 
         return view('frontend.home.home', $data);
     }
@@ -19,13 +29,18 @@ class MainIndexController extends Controller
     public function indexProject()
     {
         $data['pageTitle'] = 'Projects';
+        $data['projectData'] = Project::latest()->get();
+        $data['socialData'] = MediaSocial::latest()->get();
 
         return view('frontend.project.index', $data);
     }
 
-    public function showProject()
+    public function projectDetail($slug)
     {
         $data['pageTitle'] = 'SIGMA Platform';
+        $data['socialData'] = MediaSocial::latest()->get();
+        $data['detailProject'] = Project::where('slug', $slug)->first();
+        $data['projectData'] = Project::whereNot('slug', $slug)->latest()->get();
 
         return view('frontend.project.show', $data);
     }

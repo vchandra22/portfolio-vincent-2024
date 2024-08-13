@@ -15,10 +15,12 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->uuid('uuid')->index();
             $table->string('full_name');
+            $table->string('short_about');
             $table->string('role');
-            $table->string('about');
-            $table->string('cv');
+            $table->text('about');
+            $table->string('cv')->nullable();
             $table->string('email')->unique();
+            $table->string('profile_pict')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
