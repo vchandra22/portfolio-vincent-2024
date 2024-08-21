@@ -18,4 +18,6 @@ Route::middleware('web')->group(function () {
     Route::get('/home', [MainIndexController::class, 'index'])->name('main.index');
     Route::get('/project', [MainIndexController::class, 'indexProject'])->name('project.index');
     Route::get('/project/{slug}', [MainIndexController::class, 'projectDetail'])->name('project.detail');
+    Route::get('/article', [MainIndexController::class, 'indexArticle'])->name('article.index');
+    Route::get('/article/{slug}', [MainIndexController::class, 'articleDetail'])->name('article.detail');
 });

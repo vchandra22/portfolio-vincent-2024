@@ -45,7 +45,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate(); // regenerate session
 
-            return redirect()->intended(RouteServiceProvider::HOME); // Mengarahkan ke halaman yang sebelumnya coba diakses oleh user
+            return redirect()->intended(RouteServiceProvider::DASHBOARD); // Mengarahkan ke halaman yang sebelumnya coba diakses oleh user
         }
 
         return back()->with('loginError', 'Error Login'); // jika autentikasi gagal, back to login

@@ -1,10 +1,9 @@
 {{-- navbar-lg start --}}
-<nav class="hidden lg:block bg-primary sticky top-0 z-50" data-aos="fade-down" data-aos-delay="200" data-aos-duration="300"
-    data-aos-easing="ease-in-out" data-aos-once="true">
+<nav class="hidden lg:block bg-primary sticky top-0 z-40 w-full">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse p-0">
-            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100"
-                height="100" alt="Logo Portfolio Vincent" />
+            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100" height="100"
+                alt="Logo Portfolio Vincent" />
         </a>
         <div class="w-full md:block md:w-auto">
             <ul
@@ -18,25 +17,27 @@
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">Projects</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('article.index') }}"
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">Articles</a>
                 </li>
                 <li>
                     <a href="#"
                         class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">Contact</a>
                 </li>
-                <li>
-                    <form action="{{ route('auth.logout') }}" method="POST"
-                        class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">
-                        @csrf
-                        <button type="submit">
-                            <div class="flex items-center justify-start gap-2">
-                                <span>Logout</span>
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            </div>
-                        </button>
-                    </form>
-                </li>
+                @if (Auth::guard('web')->check())
+                    <li class="hidden lg:block">
+                        <form action="{{ route('auth.logout') }}" method="POST"
+                            class="block py-2 px-3 text-accent hover:text-accent2 rounded-none md:border-0">
+                            @csrf
+                            <button type="submit">
+                                <div class="flex items-center justify-start gap-2">
+                                    <span>Logout</span>
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </div>
+                            </button>
+                        </form>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
@@ -47,7 +48,8 @@
 <nav class="block lg:hidden z-50 bottom-0 w-full">
     <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-primary border-t border-secondary1">
         <div class="grid h-full max-w-full grid-cols-4 w-full mx-auto font-medium">
-            <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
+            <a href="{{ route('main.index') }}"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
                 <svg class="w-5 h-5 mb-2 text-accent group-hover:text-primary" aria-hidden="true" fill="none"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -55,8 +57,9 @@
                         fill="currentColor" />
                 </svg>
                 <span class="text-sm text-accent group-hover:text-primary">Home</span>
-            </button>
-            <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
+            </a>
+            <a href="{{ route('project.index') }}"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
                 <svg class="w-5 h-5 mb-2 text-accent group-hover:text-primary" aria-hidden="true" fill="none"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -64,8 +67,9 @@
                         fill="currentColor" />
                 </svg>
                 <span class="text-sm text-accent group-hover:text-primary">Projects</span>
-            </button>
-            <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
+            </a>
+            <a href="{{ route('article.index') }}"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
                 <svg class="w-5 h-5 mb-2 text-accent group-hover:text-primary" aria-hidden="true" fill="none"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -73,15 +77,15 @@
                         fill="currentColor" />
                 </svg>
                 <span class="text-sm text-accent group-hover:text-primary">Articles</span>
-            </button>
-            <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
+            </a>
+            <a href="#" class="inline-flex flex-col items-center justify-center px-5 hover:bg-accent group">
                 <svg class="w-5 h-5 mb-2 text-accent group-hover:text-primary" aria-hidden="true" fill="none"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15 2H9v2H7v6h2V4h6V2zm0 8H9v2h6v-2zm0-6h2v6h-2V4zM4 16h2v-2h12v2H6v4h12v-4h2v6H4v-6z"
                         fill="currentColor" />
                 </svg>
                 <span class="text-sm text-accent group-hover:text-primary">Contact</span>
-            </button>
+            </a>
         </div>
     </div>
 </nav>

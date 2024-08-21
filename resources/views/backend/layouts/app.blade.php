@@ -29,13 +29,19 @@
     {{-- vite resources --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>{{ __(@$pageTitle) }} | {{ get_app_name() }}</title>
+    {{-- WYSIWYG ckeditor5 --}}
+    <script src="{{ asset('assets/vendor/ckeditor5/build/ckeditor.js') }}"></script>
+
+    <title>{{ __(@$pageTitle) }} | {{ __('Dashboard') }}</title>
 </head>
 
 <body class="antialiased bg-primary">
 
     {{-- content --}}
     @yield('content')
+
+    {{-- Scripts --}}
+    @stack('script')
 
 </body>
 

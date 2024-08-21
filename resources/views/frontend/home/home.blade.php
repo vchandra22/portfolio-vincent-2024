@@ -177,18 +177,21 @@
                 @forelse ($projectData as $project)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"
                         data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-once="true">
-                        <img src="{{ $project->gambar ? asset('assets/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
-                            class="h-full w-full pl-20 overflow-hidden object-cover mx-auto rounded-lg" width="100"
+                        <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                            class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
                             height="100" alt="#">
                         <div
                             class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
                             <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                <h3 class="text-white font-regular text-start text-5xl">{{ $project->title }}</h3>
-                                <p class="text-white font-regular text-start text-xl tracking-tight leading-6 min-h-16">a
+                                <h3 class="text-white font-regular text-start text-3xl md:text-4xl lg:text-5xl">
+                                    {{ $project->title }}
+                                </h3>
+                                <p
+                                    class="text-white font-regular text-start text-md lg:text-xl tracking-tight leading-6 min-h-16">
                                     {{ $project->short_description }}
                                 </p>
                                 <a href="{{ route('project.detail', $project->slug) }}"
-                                    class="inline-flex justify-start w-auto text-xl font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
+                                    class="inline-flex justify-start w-auto text-lg lg:text-xl font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
                                     Detail
                                     <svg class="w-6 h-6 ms-2 -rotate-90 rtl:rotate-180" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

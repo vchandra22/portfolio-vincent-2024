@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\MediaSocial;
 use App\Models\Project;
 use App\Models\Skill;
@@ -37,12 +38,31 @@ class MainIndexController extends Controller
 
     public function projectDetail($slug)
     {
-        $data['pageTitle'] = 'SIGMA Platform';
+        $data['pageTitle'] = 'Detail Project';
         $data['socialData'] = MediaSocial::latest()->get();
         $data['detailProject'] = Project::where('slug', $slug)->first();
         $data['projectData'] = Project::whereNot('slug', $slug)->latest()->get();
 
         return view('frontend.project.show', $data);
+    }
+
+    public function indexArticle()
+    {
+        $data['pageTitle'] = 'Article';
+        $data['articleData'] = Blog::latest()->get();
+        $data['socialData'] = MediaSocial::latest()->get();
+
+        return view('frontend.article.index', $data);
+    }
+
+    public function articleDetail($slug)
+    {
+        $data['pageTitle'] = 'Detail Article';
+        $data['socialData'] = MediaSocial::latest()->get();
+        $data['detailArticle'] = Blog::where('slug', $slug)->first();
+        $data['articleData'] = Blog::whereNot('slug', $slug)->latest()->get();
+
+        return view('frontend.article.show', $data);
     }
 
     /**

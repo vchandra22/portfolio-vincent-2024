@@ -66,12 +66,12 @@
                 <div class="md:flex flex-col justify-center text-start lg:text-start">
                     <div>
                         <div class="mx-auto w-full lg:max-w-xl p-6 space-y-1 sm:py-12 border bg-primary border-accent">
-                            <h1 class="text-5xl text-center font-bold text-accent">
+                            <h1 class="text-xl md:text-3xl lg:text-5xl text-center font-bold text-accent">
                                 Restricted Access_
                             </h1>
 
                             <p
-                                class="mb-6 text-md text-center font-normal leading-5 md:leading-none font-paragraf text-accent lg:text-lg">
+                                class="mb-6 text-xs text-center font-normal leading-1 md:leading-none font-paragraf text-accent md:text-md lg:text-lg">
                                 Only authorized personnel may proceed.
                             </p>
 

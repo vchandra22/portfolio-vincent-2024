@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->uuid('uuid')->index();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->string('short_description');
             $table->text('content');
             $table->string('gambar')->nullable();

@@ -2,34 +2,35 @@
 
 @section('content')
     {{-- section banner start --}}
-    <section class="bg-primary min-h-96 flex items-center justify-start w-auto relative">
+    <section class="bg-primary min-h-96 flex items-center justify-start relative w-full">
         <div class="absolute bottom-0 top-0 left-0 -right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
             <img src="{{ asset('assets/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover">
         </div>
-        <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
+        <div class="h-full my-auto mx-auto max-w-screen-2xl relative z-30 w-full">
             {{-- breadcrumbs start --}}
             <nav class="flex" aria-label="Breadcrumb" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse m-4 lg:m-0">
                     <li class="inline-flex items-center">
                         <a href="{{ route('main.index') }}"
-                            class="inline-flex items-center text-lg font-medium hover:underline text-secondary2 hover:text-accent">
+                            class="inline-flex items-center text-md md:text-lg font-medium hover:underline text-secondary2 hover:text-accent">
                             Home
                         </a>
                     </li>
                     <li>
                         <div class="flex items-center">
-                            <span class="items-center text-lg font-medium text-secondary2">/</span>
+                            <span class="items-center text-md md:text-lg font-medium text-secondary2">/</span>
                             <a href="{{ route('project.index') }}"
-                                class="ms-1 text-lg font-medium text-secondary2 hover:underline md:ms-2 hover:text-accent">Projects</a>
+                                class="ms-1 text-md md:text-lg font-medium text-secondary2 hover:underline md:ms-2 hover:text-accent">Projects</a>
                         </div>
                     </li>
                     <li>
                         <div class="flex items-center">
-                            <span class="items-center text-lg font-medium text-secondary2">/</span>
-                            <a href="#" class="ms-1 text-lg font-medium text-accent hover:underline md:ms-2">
+                            <span class="items-center text-md md:text-lg font-medium text-secondary2">/</span>
+                            <a href="#"
+                                class="ms-1 text-md md:text-lg font-medium text-accent hover:underline md:ms-2 overflow-hidden line-clamp-1">
                                 {{ $detailProject->title }}
                             </a>
                         </div>
@@ -41,7 +42,7 @@
             {{-- page title start --}}
             <div class="w-1/3 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
-                <h1 class="mb-4 text-6xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl">
+                <h1 class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl">
                     {{ $detailProject->title }}
                 </h1>
             </div>
@@ -51,24 +52,23 @@
     {{-- section banner end --}}
 
     {{-- section content start --}}
-    <section class="bg-secondary1 w-auto py-12 md:py-16">
-        <div class="mx-auto max-w-screen-2xl">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start" data-aos="fade" data-aos-delay="900"
+    <section class="bg-secondary1 py-12 md:py-16 w-full">
+        <div class="mx-auto max-w-screen-2xl w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full" data-aos="fade" data-aos-delay="900"
                 data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="false">
                 <div class="prose prose-invert prose-lg lg:col-span-2 w-full m-4 lg:m-0">
-                    {{ $detailProject->content }}
+                    {!! $detailProject->content !!}
                 </div>
-                <div
-                    class="lg:col-span-1 text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
+                <div class="text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
                     <h3
-                        class="mb-6 text-4xl font-normal text-start tracking-tighter text-secondary1 md:text-5xl lg:text-6xl">
+                        class="mb-6 text-3xl font-normal text-start tracking-tighter text-secondary1 md:text-5xl lg:text-6xl">
                         Another Projects_</h3>
                     <div class="mx-auto flex flex-col gap-3">
                         @forelse ($projectData as $project)
                             <div class="relative w-full h-56 lg:h-56 bg-transparent">
-                                <img src="{{ $project->gambar ? asset('assets/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
-                                    class="h-full w-full pl-20 overflow-hidden object-cover mx-auto rounded-lg"
-                                    width="100" height="100" alt="#">
+                                <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                    class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
+                                    height="100" alt="#">
                                 <div
                                     class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent2 to-transparent bg-opacity-50 border-accent2 border-2 rounded-lg">
                                     <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
@@ -78,8 +78,8 @@
                                             {{ $project->short_description }}
                                         </p>
                                         <a href="{{ route('project.detail', $project->slug) }}"
-                                            class="inline-flex justify-start w-auto text-md font-medium text-start text-white bg-transparent hover:underline tracking-wide"
-                                            target="_blank">See Detail
+                                            class="inline-flex justify-start w-auto text-md font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
+                                            Detail
                                             <svg class="w-6 h-6 ms-2 -rotate-90 rtl:rotate-180" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path
