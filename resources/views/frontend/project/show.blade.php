@@ -1,12 +1,33 @@
 @extends('frontend.layouts.app')
 
+@section('meta')
+    <meta name="description" content="{{ $detailProject->meta_description }}">
+    <meta name="keywords" content="{{ $detailProject->meta_keywords }}">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:type" content="Project Portfolio Web Developer Vincent">
+    <meta property="og:title" content="{{ $detailProject->meta_title }}">
+    <meta property="og:description" content="{{ $detailProject->meta_description }}">
+    <meta property="og:image" content="{{ getImageFile($detailProject->og_image) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <meta property="og:site_name" content="{{ get_app_name() }}">
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="Project Portfolio Web Developer Vincent">
+    <meta name="twitter:title" content="{{ $detailProject->meta_title }}">
+    <meta name="twitter:description" content="{{ $detailProject->meta_description }}">
+    <meta name="twitter:image" content="{{ getImageFile($detailProject->og_image) }}">
+@endsection
+
+
 @section('content')
     {{-- section banner start --}}
     <section class="bg-primary min-h-96 flex items-center justify-start relative w-full">
         <div class="absolute bottom-0 top-0 left-0 -right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
             <img src="{{ asset('assets/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-full w-full overflow-hidden object-cover">
+                class="h-full w-full overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="h-full my-auto mx-auto max-w-screen-2xl relative z-30 w-full">
             {{-- breadcrumbs start --}}
@@ -29,7 +50,7 @@
                     <li>
                         <div class="flex items-center">
                             <span class="items-center text-md md:text-lg font-medium text-secondary2">/</span>
-                            <a href="#"
+                            <a href="{{ url()->current() }}"
                                 class="ms-1 text-md md:text-lg font-medium text-accent hover:underline md:ms-2 overflow-hidden line-clamp-1">
                                 {{ $detailProject->title }}
                             </a>
@@ -40,11 +61,15 @@
             {{-- breadcrumbs end --}}
 
             {{-- page title start --}}
-            <div class="w-1/3 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
+            <div class="w-4/5 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
-                <h1 class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl">
+                <h1
+                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl overflow-hidden line-clamp-2">
                     {{ $detailProject->title }}
                 </h1>
+                <p class="text-sm text-secondary2 text-start pt-2">Dipublikasi Tanggal:
+                    {{ convertDate($detailProject->created_at) }}
+                </p>
             </div>
             {{-- page title end --}}
         </div>
@@ -56,8 +81,15 @@
         <div class="mx-auto max-w-screen-2xl w-full">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full" data-aos="fade" data-aos-delay="900"
                 data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="false">
-                <div class="prose prose-invert prose-lg lg:col-span-2 w-full m-4 lg:m-0">
-                    {!! $detailProject->content !!}
+                <div class="lg:col-span-2 w-full">
+                    <div>
+                        <img src="{{ $detailProject->gambar ? asset('storage/img/' . $detailProject->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                            class="object-cover w-full h-fit m-0" width="100" height="100"
+                            alt="{{ $detailProject->judul }}">
+                    </div>
+                    <article class="prose prose-invert prose-lg lg:prose-xl lg:col-span-2 m-4 lg:m-0 pt-8 max-w-none">
+                        {!! $detailProject->content !!}
+                    </article>
                 </div>
                 <div class="text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
                     <h3
@@ -71,10 +103,13 @@
                                     height="100" alt="#">
                                 <div
                                     class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent2 to-transparent bg-opacity-50 border-accent2 border-2 rounded-lg">
-                                    <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                        <h4 class="text-white font-regular text-start text-5xl">{{ $project->title }}</h4>
+                                    <div
+                                        class="px-2 md:px-4 lg:px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
+                                        <h4
+                                            class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
+                                            {{ $project->title }}</h4>
                                         <p
-                                            class="text-white font-regular text-start text-md tracking-tight leading-4 min-h-16">
+                                            class="text-white font-regular text-start text-md tracking-tight leading-4 overflow-hidden line-clamp-3">
                                             {{ $project->short_description }}
                                         </p>
                                         <a href="{{ route('project.detail', $project->slug) }}"
@@ -94,6 +129,9 @@
                                 Empty data
                             </p>
                         @endforelse
+                    </div>
+                    <div class="w-full py-8 px-4">
+                        {{ $projectData->links() }}
                     </div>
                 </div>
             </div>

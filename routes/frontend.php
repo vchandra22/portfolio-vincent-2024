@@ -20,4 +20,7 @@ Route::middleware('web')->group(function () {
     Route::get('/project/{slug}', [MainIndexController::class, 'projectDetail'])->name('project.detail');
     Route::get('/article', [MainIndexController::class, 'indexArticle'])->name('article.index');
     Route::get('/article/{slug}', [MainIndexController::class, 'articleDetail'])->name('article.detail');
+    Route::get('/contact', [MainIndexController::class, 'indexContact'])->name('contact.index');
+
+    Route::get('/download-cv-vincent/{cv}', [MainIndexController::class, 'downloadCV'])->name('download.file');
 });

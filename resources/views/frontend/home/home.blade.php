@@ -1,34 +1,57 @@
 @extends('frontend.layouts.app')
 
+@section('meta')
+    <meta name="description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta name="keywords"
+        content="web developer, laravel developer, fresh graduate web developer, vincent chandra, aplikasi website">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:type" content="Artikel Portfolio Web Developer Vincent">
+    <meta property="og:title" content="Portfolio Vincent Chandra Trie Novan">
+    <meta property="og:description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta property="og:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <meta property="og:site_name" content="{{ get_app_name() }}">
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="Artikel Portfolio Web Developer Vincent">
+    <meta name="twitter:title" content="Portfolio Vincent Chandra Trie Novan">
+    <meta name="twitter:description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta name="twitter:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+@endsection
+
 @section('content')
     {{-- jumbotron start --}}
     <section class="bg-primary bg-blend-multiply relative min-h-screen w-auto">
         <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
             <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-full w-full overflow-hidden object-cover">
+                class="h-full w-full overflow-hidden object-cover" width="100" height="100">
             <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-2/3 w-2/3 overflow-hidden object-cover">
+                class="h-2/3 w-2/3 overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4 max-w-screen-2xl w-full mx-auto relative z-30">
             <div class="px-4 mx-auto text-start py-3 md:py-4 lg:py-8 xl:py-20">
                 <h1
                     class="mb-4 text-6xl font-normal tracking-tighter text-accent md:text-8xl lg:text-9xl min-h-32 lg:min-h-72">
-                    <span class="hidden">Portfolio </span>
                     <span id="full_name"></span><span class="cursor inline-block animate-wiggle"> |</span>
+                    <span class="mb-6 text-lg font-normal tracking-tighter text-accent md:text-3xl lg:text-5xl">
+                        <span id="role"></span><span class="cursor inline-block animate-wiggle"> |</span>
+                    </span>
                 </h1>
-                <h2 class="mb-6 text-lg font-normal tracking-tighter text-accent md:text-3xl lg:text-5xl">
-                    <span id="role"></span><span class="cursor inline-block animate-wiggle"> |</span>
-                </h2>
                 <div>
-                    <h3 class="mb-8 text-md leading-5 md:text-xl font-normal font-static text-secondary2 lg:text-2xl"
+                    <h2 class="mb-8 text-md leading-5 md:text-xl font-normal font-static text-secondary2 lg:text-2xl"
                         data-aos="fade" data-aos-delay="900" data-aos-duration="1000" data-aos-easing="ease-in-out"
                         data-aos-once="true">
                         {{ $userData->short_about }}
-                    </h3>
+                    </h2>
                 </div>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
-                    <a href="#"
+                    <a href="{{ route('download.file', ['cv' => $userData->cv]) }}"
                         class="inline-flex justify-center items-center py-1 px-3 lg:py-3 lg:px-5 text-base font-medium text-center text-primary rounded-none border border-accent bg-accent hover:bg-transparent hover:border hover:border-accent hover:text-accent"
                         data-aos="fade" data-aos-delay="1200" data-aos-duration="300" data-aos-easing="ease-in-out"
                         data-aos-once="true">
@@ -40,7 +63,7 @@
                                 fill="currentColor" />
                         </svg>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('project.index') }}"
                         class="inline-flex justify-center items-center py-1 px-3 lg:py-3 lg:px-5 sm:ms-4 text-base font-medium text-center text-accent rounded-none border border-accent hover:bg-accent hover:text-secondary1"
                         data-aos="fade" data-aos-delay="1500" data-aos-duration="300" data-aos-easing="ease-in-out"
                         data-aos-once="true">
@@ -56,14 +79,13 @@
                         @forelse ($techData as $item)
                             <div
                                 class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
-                                <img src="{{ $item->gambar ? asset('assets/icon/' . $item->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
-                                    class="w-10 h-10 md:w-20 md:h-20 " width="100" height="100"
+                                <img src="{{ $item->gambar ? asset('storage/icon/' . $item->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                    class="w-10 h-10 md:w-20 md:h-20" width="100" height="100"
                                     alt="{{ $item->gambar }}">
                             </div>
                         @empty
                             <p class="text-center">no data</p>
                         @endforelse
-
                     </div>
                 </div>
             </div>
@@ -73,16 +95,17 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full justify-between gap-2 md:grid-4 lg:grid-8">
                 @foreach ($socialData as $social)
                     <div class="h-16 md:h-20">
-                        <a href="{{ $social->link }}"
+                        <a href="{{ $social->link }}" target="__blank"
                             class="grid grid-cols-2 md:grid-cols-3 items-center justify-center h-full mx-auto px-8 rounded-md bg-secondary2 hover:bg-accent">
                             <div>
-                                <img src="{{ $social->gambar ? asset('assets/icon/' . $social->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
-                                    class="w-10 h-10 md:w-14 md:h-14" alt="{{ $social->gambar }}">
+                                <img src="{{ $social->gambar ? asset('storage/icon/' . $social->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                    class="w-10 h-10 md:w-14 md:h-14" alt="{{ $social->gambar }}" width="100"
+                                    height="100">
                             </div>
                             <div class="md:col-span-2">
-                                <h4 class="text-sm md:text-xl font-static font-medium tracking-wide text-secondary1">
+                                <p class="text-sm md:text-xl font-static font-medium tracking-wide text-secondary1">
                                     {{ $social->title }}
-                                </h4>
+                                </p>
                             </div>
                         </a>
                     </div>
@@ -104,8 +127,9 @@
                 <div class="bg-gradient-to-b from-transparent to-accent border-2 border-secondary1 rounded-lg mx-auto xl:mx-0"
                     data-aos="fade" data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out"
                     data-aos-once="true">
-                    <img src="{{ $userData->profile_pict ? asset('assets/img/' . $userData->profile_pict) : asset('assets/img/logo-vincent-portfolio.png') }}"
-                        class="w-full mx-auto object-cover overflow-hidden" width="100" height="100" alt="php icon">
+                    <img src="{{ $userData->profile_pict ? asset('storage/img/' . $userData->profile_pict) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                        class="w-full mx-auto object-cover overflow-hidden" width="100" height="100"
+                        alt="php icon">
                 </div>
                 <div class="lg:col-span-2 h-full grid grid-cols-1 items-center justify-center" data-aos="fade"
                     data-aos-delay="1200" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
@@ -113,9 +137,9 @@
                         <h3 class="text-accent font-normal text-5xl lg:text-7xl tracking-tighter text-start">
                             {{ $userData->full_name }} as {{ $userData->role }}
                         </h3>
-                        <h4 class="text-accent2 font-normal font-static text-md tracking-tight md:text-xl text-justify">
-                            {{ $userData->about }}
-                        </h4>
+                        <p class="text-accent2 font-normal font-static text-md tracking-tight md:text-xl text-justify">
+                            {{ strip_tags($userData->about) }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -182,12 +206,15 @@
                             height="100" alt="#">
                         <div
                             class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
-                            <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                <h3 class="text-white font-regular text-start text-3xl md:text-4xl lg:text-5xl">
+                            <div class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
+                                <h3
+                                    class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
                                     {{ $project->title }}
                                 </h3>
+                                <p class="text-sm text-white text-start pt-1">
+                                    {{ convertDate($project->created_at) }}</p>
                                 <p
-                                    class="text-white font-regular text-start text-md lg:text-xl tracking-tight leading-6 min-h-16">
+                                    class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-12 lg:min-h-20">
                                     {{ $project->short_description }}
                                 </p>
                                 <a href="{{ route('project.detail', $project->slug) }}"

@@ -187,8 +187,19 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        //
+        $blog = Blog::find($id);
+        if ($blog->gambar) {
+            Storage::disk('public')->delete('/img/' . $blog->gambar);
+        }
+
+        if ($blog->og_image) {
+            Storage::disk('public')->delete('/img/' . $blog->og_image);
+        }
+
+        $blog->delete();
+
+        return redirect(route('backend.article'))->with('success', 'Data berhasil dihapus!');
     }
 }

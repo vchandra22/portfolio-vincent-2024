@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Carbon;
+
+
 // get app name
 function get_app_name()
 {
@@ -14,4 +17,12 @@ function getImageFile($file)
     } else {
         return asset('assets/img/logo-vincent-portfolio.png');
     }
+}
+
+// mengubah format tanggal
+function convertDate($date)
+{
+    $convertedDate = Carbon::createFromFormat('ymd', substr($date, 2, 2) . substr($date, 5, 2) . substr($date, 8, 2))->format('d M Y');
+
+    return $convertedDate;
 }

@@ -24,13 +24,14 @@
                     <div
                         class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
                         <div class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
-                            <h3 class="text-white font-regular text-start text-xl md:text-4xl lg:text-5xl">
+                            <h3
+                                class="text-white font-regular text-start text-xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
                                 {{ $project->title }}
                             </h3>
-                            <p
-                                class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-16">
+                            <h4
+                                class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 overflow-hidden line-clamp-3">
                                 {{ $project->short_description }}
-                            </p>
+                            </h4>
                             <a href="{{ route('backend.show_project', $project->slug) }}"
                                 class="inline-flex justify-start w-auto text-lg lg:text-xl font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
                                 Detail

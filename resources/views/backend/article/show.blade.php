@@ -1,11 +1,32 @@
 @extends('backend.layouts.app')
 
+@section('meta')
+    <meta name="description" content="{{ $detailArticle->meta_description }}">
+    <meta name="keywords" content="{{ $detailArticle->meta_keywords }}">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:type" content="Artikel Portfolio Web Developer Vincent">
+    <meta property="og:title" content="{{ $detailArticle->meta_title }}">
+    <meta property="og:description" content="{{ $detailArticle->meta_description }}">
+    <meta property="og:image" content="{{ getImageFile($detailArticle->og_image) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <meta property="og:site_name" content="{{ get_app_name() }}">
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="Artikel Portfolio Web Developer Vincent">
+    <meta name="twitter:title" content="{{ $detailArticle->meta_title }}">
+    <meta name="twitter:description" content="{{ $detailArticle->meta_description }}">
+    <meta name="twitter:image" content="{{ getImageFile($detailArticle->og_image) }}">
+@endsection
+
 @section('content')
     @include('backend.layouts.sidebar')
     <section class="p-5 min-h-screen md:ml-64 bg-black">
         <div class="md:flex justify-between items-center p-0 mb-8">
             <div>
-                <h1 class="text-2xl md:text-4xl lg:text-6xl text-accent tracking-tighter mb-4 md:mb-0">{{ __(@$pageTitle) }}
+                <h1 class="text-2xl md:text-4xl lg:text-6xl text-accent tracking-tighter mb-4 md:mb-0">
+                    {{ __(@$pageTitle) }}
                 </h1>
             </div>
             <div>
@@ -20,16 +41,35 @@
         <section class="bg-black py-12 md:py-16 w-full">
             <div class="mx-auto max-w-screen-2xl w-full">
                 <div class="mb-4">
-                    <a href="{{ route('backend.edit_article', $detailArticle->slug) }}"
-                        class="text-accent hover:underline font-medium rounded-sm text-sm">
-                        Edit
-                    </a>
-                    <h2 class="text-xl md:text-4xl lg:text-5xl text-start font-medium tracking-tight text-accent">
-                        {{ $detailArticle->title }}</h2>
+                    <div class="flex gap-4">
+                        <a href="{{ route('backend.edit_article', $detailArticle->slug) }}"
+                            class="text-accent hover:underline font-medium rounded-sm text-sm">
+                            Edit
+                        </a>
+                        <form id="delete-article-{{ $detailArticle->id }}"
+                            action="{{ route('backend.delete_article', ['id' => $detailArticle->id]) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <div class="text-start text-sm text-red-500 hover:underline">
+                                <button class="delete-button" data-id="{{ $detailArticle->id }}" type="submit"
+                                    value="Delete">Delete
+                                </button>
+                        </form>
+                    </div>
                 </div>
+                <h2 class="text-2xl md:text-6xl lg:text-8xl text-start font-medium tracking-tighter text-accent mb-4">
+                    {{ $detailArticle->title }}
+                </h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full">
-                    <div class="prose prose-invert prose-lg lg:col-span-2 w-full m-4 lg:m-0">
-                        {!! $detailArticle->content !!}
+                    <div class="col-span-2 w-full">
+                        <div>
+                            <img src="{{ $detailArticle->gambar ? asset('storage/img/' . $detailArticle->gambar) : asset('frontend/assets/img/sigma-logo-full.png') }}"
+                                class="object-cover w-full h-full" width="100" height="100"
+                                alt="{{ $detailArticle->judul }}">
+                        </div>
+                        <article class="prose prose-invert prose-lg lg:prose-xl lg:col-span-2 m-4 lg:m-0 pt-8 max-w-none">
+                            {!! $detailArticle->content !!}
+                        </article>
                     </div>
                     <div class="text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
                         <h3
@@ -44,10 +84,12 @@
                                     <div
                                         class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent2 to-transparent bg-opacity-50 border-accent2 border-2 rounded-lg">
                                         <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                            <h4 class="text-white font-regular text-start text-5xl">{{ $article->title }}
+                                            <h4
+                                                class="text-white font-semibold text-start text-4xl lg:text-5xl overflow-hidden line-clamp-2">
+                                                {{ $article->title }}
                                             </h4>
                                             <span
-                                                class="text-white font-regular text-start text-xs md:text-md tracking-tight leading-4 min-h-16 overflow-hidden line-clamp-3">
+                                                class="text-white font-regular text-start text-sm md:text-lg lg:text-xl tracking-tight leading-4 md:leading-6 min-h-12 lg:min-h-20 overflow-hidden line-clamp-3">
                                                 {!! $article->content !!}
                                             </span>
                                             <a href="{{ route('backend.show_article', $article->slug) }}"

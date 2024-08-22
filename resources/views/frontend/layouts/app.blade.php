@@ -2,8 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- SEO Meta Tags -->
+    @yield('meta')
 
     {{-- favicon --}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
@@ -12,6 +12,9 @@
     <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

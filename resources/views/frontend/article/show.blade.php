@@ -6,7 +6,7 @@
         <div class="absolute bottom-0 top-0 left-0 -right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
             <img src="{{ asset('assets/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-full w-full overflow-hidden object-cover">
+                class="h-full w-full overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="h-full my-auto mx-auto max-w-screen-2xl relative z-30 w-full">
             {{-- breadcrumbs start --}}
@@ -40,11 +40,15 @@
             {{-- breadcrumbs end --}}
 
             {{-- page title start --}}
-            <div class="w-1/3 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
+            <div class="w-4/5 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
-                <h1 class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl">
+                <h1
+                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl overflow-hidden line-clamp-2">
                     {{ $detailArticle->title }}
                 </h1>
+                <p class="text-sm text-secondary2 text-start pt-2">Dipublikasi Tanggal:
+                    {{ convertDate($detailArticle->created_at) }}
+                </p>
             </div>
             {{-- page title end --}}
         </div>
@@ -56,8 +60,15 @@
         <div class="mx-auto max-w-screen-2xl w-full">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full" data-aos="fade" data-aos-delay="900"
                 data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="false">
-                <div class="prose prose-invert prose-lg lg:col-span-2 w-full m-4 lg:m-0">
-                    {!! $detailArticle->content !!}
+                <div class="col-span-2 w-full">
+                    <div>
+                        <img src="{{ $detailArticle->gambar ? asset('storage/img/' . $detailArticle->gambar) : asset('frontend/assets/img/sigma-logo-full.png') }}"
+                            class="object-cover w-full h-full" width="100" height="100"
+                            alt="{{ $detailArticle->judul }}">
+                    </div>
+                    <article class="prose prose-invert prose-lg lg:prose-xl lg:col-span-2 m-4 lg:m-0 pt-8 max-w-none">
+                        {!! $detailArticle->content !!}
+                    </article>
                 </div>
                 <div class="text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
                     <h3
@@ -71,11 +82,14 @@
                                     height="100" alt="#">
                                 <div
                                     class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent2 to-transparent bg-opacity-50 border-accent2 border-2 rounded-lg">
-                                    <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                        <h4 class="text-white font-regular text-start text-5xl">{{ $article->title }}</h4>
+                                    <div
+                                        class="px-2 md:px-4 lg:px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
+                                        <h4
+                                            class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
+                                            {{ $article->title }}</h4>
                                         <span
-                                            class="text-white font-regular text-start text-md tracking-tight leading-4 min-h-16 overflow-hidden line-clamp-3">
-                                            {!! $article->content !!}
+                                            class="text-white font-regular text-start text-md tracking-tight leading-4 overflow-hidden line-clamp-3">
+                                            {{ strip_tags($article->content) }}
                                         </span>
                                         <a href="{{ route('article.detail', $article->slug) }}"
                                             class="inline-flex justify-start w-auto text-md font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
@@ -94,6 +108,9 @@
                                 Empty data
                             </p>
                         @endforelse
+                    </div>
+                    <div class="w-full py-8 px-4">
+                        {{ $articleData->links() }}
                     </div>
                 </div>
             </div>

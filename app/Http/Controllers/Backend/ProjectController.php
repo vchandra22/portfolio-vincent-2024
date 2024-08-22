@@ -189,8 +189,19 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        if ($project->gambar) {
+            Storage::disk('public')->delete('/img/' . $project->gambar);
+        }
+
+        if ($project->og_image) {
+            Storage::disk('public')->delete('/img/' . $project->og_image);
+        }
+
+        $project->delete();
+
+        return redirect(route('backend.project'))->with('success', 'Data berhasil dihapus!');
     }
 }

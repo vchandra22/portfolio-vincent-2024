@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use App\Http\Requests\StoreSkillRequest;
-use App\Http\Requests\UpdateSkillRequest;
+use App\Http\Controllers\Controller;
 use App\Models\Skill;
+use Illuminate\Http\Request;
 
-class SkillController extends Controller
+class ManageContentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data['pageTitle'] = 'Manage Content';
+
+        return view('backend.content.index', $data);
     }
 
     /**
@@ -27,7 +29,7 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSkillRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +53,7 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSkillRequest $request, Skill $skill)
+    public function update(Request $request, Skill $skill)
     {
         //
     }

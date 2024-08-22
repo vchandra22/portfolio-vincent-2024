@@ -20,16 +20,36 @@
         <section class="bg-black py-12 md:py-16 w-full">
             <div class="mx-auto max-w-screen-2xl w-full">
                 <div class="mb-4">
-                    <a href="{{ route('backend.edit_project', $detailProject->slug) }}"
-                        class="text-accent hover:underline font-medium rounded-sm text-sm">
-                        Edit
-                    </a>
-                    <h2 class="text-xl md:text-4xl lg:text-5xl text-start font-medium tracking-tight text-accent">
-                        {{ $detailProject->title }}</h2>
+                    <div class="flex gap-4">
+                        <a href="{{ route('backend.edit_project', $detailProject->slug) }}"
+                            class="text-accent hover:underline font-medium rounded-sm text-sm mb-1">
+                            Edit
+                        </a>
+                        <form id="delete-project-{{ $detailProject->id }}"
+                            action="{{ route('backend.delete_project', ['id' => $detailProject->id]) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <div class="text-start text-sm text-red-500 hover:underline">
+                                <button class="delete-button" data-id="{{ $detailProject->id }}" type="submit"
+                                    value="Delete">Delete
+                                </button>
+                        </form>
+                    </div>
                 </div>
+
+                <h2 class="text-xl md:text-4xl lg:text-5xl text-start font-medium tracking-tight text-accent">
+                    {{ $detailProject->title }}
+                </h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full">
-                    <div class="prose prose-invert prose-lg lg:col-span-2 w-full m-4 lg:m-0">
-                        {!! $detailProject->content !!}
+                    <div class="lg:col-span-2 w-full">
+                        <div>
+                            <img src="{{ $detailProject->gambar ? asset('storage/img/' . $detailProject->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                class="object-cover w-full h-fit m-0" width="100" height="100"
+                                alt="{{ $detailProject->judul }}">
+                        </div>
+                        <article class="prose prose-invert prose-lg lg:prose-xl lg:col-span-2 m-4 lg:m-0 pt-8 max-w-none">
+                            {!! $detailProject->content !!}
+                        </article>
                     </div>
                     <div class="text-start p-4 m-4 lg:m-0 bg-accent rounded-lg lg:sticky lg:top-20 lg:h-fit lg:z-10">
                         <h3
@@ -40,14 +60,17 @@
                                 <div class="relative w-full h-56 lg:h-56 bg-transparent">
                                     <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
                                         class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
-                                        height="100" alt="#">
+                                        height="100" alt="{{ $project->gambar }}">
                                     <div
                                         class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent2 to-transparent bg-opacity-50 border-accent2 border-2 rounded-lg">
-                                        <div class="px-8 py-4 w-96 h-full grid grid-cols-1 justify-start items-center">
-                                            <h4 class="text-white font-regular text-start text-5xl">{{ $project->title }}
+                                        <div
+                                            class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
+                                            <h4
+                                                class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
+                                                {{ $project->title }}
                                             </h4>
                                             <p
-                                                class="text-white font-regular text-start text-xs md:text-md tracking-tight leading-4 min-h-16">
+                                                class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-12 lg:min-h-20">
                                                 {{ $project->short_description }}
                                             </p>
                                             <a href="{{ route('backend.show_project', $project->slug) }}"

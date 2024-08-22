@@ -1,12 +1,36 @@
 @extends('frontend.layouts.app')
 
+@section('meta')
+    <meta name="description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta name="keywords"
+        content="web developer, laravel developer, fresh graduate web developer, vincent chandra, aplikasi website">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:type" content="Artikel Portfolio Web Developer Vincent">
+    <meta property="og:title" content="Portfolio Vincent Chandra Trie Novan">
+    <meta property="og:description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta property="og:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <meta property="og:site_name" content="{{ get_app_name() }}">
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="Artikel Portfolio Web Developer Vincent">
+    <meta name="twitter:title" content="Portfolio Vincent Chandra Trie Novan">
+    <meta name="twitter:description"
+        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta name="twitter:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+@endsection
+
 @section('content')
     {{-- section banner start --}}
     <section class="bg-primary min-h-96 flex items-center justify-start w-auto relative">
         <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="300"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
             <img src="{{ asset('assets/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-full w-full overflow-hidden object-cover">
+                class="h-full w-full overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
             {{-- breadcrumbs start --}}
@@ -22,9 +46,8 @@
                     <li>
                         <div class="flex items-center">
                             <span class="items-center text-md md:text-lg font-medium text-secondary2">/</span>
-                            <a href="#"
-                                class="ms-1 text-md md:text-lg font-medium text-accent hover:underline md:ms-2">Recent
-                                Projects</a>
+                            <a href="{{ route('project.index') }}"
+                                class="ms-1 text-md md:text-lg font-medium text-accent hover:underline md:ms-2">{{ $pageTitle }}</a>
                         </div>
                     </li>
                 </ol>
@@ -36,7 +59,7 @@
                 data-aos-easing="ease-in-out" data-aos-once="false">
                 <h1
                     class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl m-4 lg:m-0">
-                    Recent Project_
+                    {{ $pageTitle }}_
                 </h1>
             </div>
             {{-- page title end --}}
@@ -57,13 +80,16 @@
                         <div
                             class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
                             <div class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
-                                <h3 class="text-white font-regular text-start text-xl md:text-4xl lg:text-5xl">
+                                <h3
+                                    class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
                                     {{ $project->title }}
                                 </h3>
-                                <p
-                                    class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-16">
+                                <p class="text-sm text-white text-start pt-1">
+                                    {{ convertDate($project->created_at) }}</p>
+                                <h4
+                                    class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-12 lg:min-h-20">
                                     {{ $project->short_description }}
-                                </p>
+                                </h4>
                                 <a href="{{ route('project.detail', $project->slug) }}"
                                     class="inline-flex justify-start w-auto text-lg lg:text-xl font-medium text-start text-white bg-transparent hover:underline tracking-wide">See
                                     Detail
@@ -84,6 +110,9 @@
                         </p>
                     </div>
                 @endforelse
+            </div>
+            <div class="w-full py-8 px-4">
+                {{ $projectData->links() }}
             </div>
         </div>
     </section>

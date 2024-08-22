@@ -30,7 +30,7 @@ class MainIndexController extends Controller
     public function indexProject()
     {
         $data['pageTitle'] = 'Projects';
-        $data['projectData'] = Project::latest()->get();
+        $data['projectData'] = Project::latest()->paginate(8);
         $data['socialData'] = MediaSocial::latest()->get();
 
         return view('frontend.project.index', $data);
@@ -41,7 +41,7 @@ class MainIndexController extends Controller
         $data['pageTitle'] = 'Detail Project';
         $data['socialData'] = MediaSocial::latest()->get();
         $data['detailProject'] = Project::where('slug', $slug)->first();
-        $data['projectData'] = Project::whereNot('slug', $slug)->latest()->get();
+        $data['projectData'] = Project::whereNot('slug', $slug)->latest()->paginate(4);
 
         return view('frontend.project.show', $data);
     }
@@ -49,7 +49,7 @@ class MainIndexController extends Controller
     public function indexArticle()
     {
         $data['pageTitle'] = 'Article';
-        $data['articleData'] = Blog::latest()->get();
+        $data['articleData'] = Blog::latest()->paginate(8);
         $data['socialData'] = MediaSocial::latest()->get();
 
         return view('frontend.article.index', $data);
@@ -60,9 +60,24 @@ class MainIndexController extends Controller
         $data['pageTitle'] = 'Detail Article';
         $data['socialData'] = MediaSocial::latest()->get();
         $data['detailArticle'] = Blog::where('slug', $slug)->first();
-        $data['articleData'] = Blog::whereNot('slug', $slug)->latest()->get();
+        $data['articleData'] = Blog::whereNot('slug', $slug)->latest()->paginate(4);
 
         return view('frontend.article.show', $data);
+    }
+
+    public function indexContact() {
+        $data['pageTitle'] = 'Contact';
+        $data['socialData'] = MediaSocial::latest()->get();
+        $data['userData'] = User::firstOrFail();
+
+        return view('frontend.contact.index', $data);
+    }
+
+    public function downloadCV($cv) {
+        $filePath = storage_path('app/private/documents/' . $cv);
+
+        // Return the file as a download response
+        return response()->download($filePath);
     }
 
     /**
