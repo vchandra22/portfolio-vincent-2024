@@ -1,7 +1,6 @@
 {
     "version": 2,
     "framework": null,
-    "public": "public",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
@@ -18,7 +17,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://vincent-space-app.vercel.app/",
+        "APP_URL": "https://vincent-techspace-app.vercel.app/",
         "APP_KEY": "base64:s4ZGBiJBoFVlJiedF/QntlCkieayhAiAphKiw0TuYB4=",
 
         "DB_CONNECTION": "mysql",
