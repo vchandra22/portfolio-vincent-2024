@@ -39,6 +39,7 @@
                 <h1
                     class="mb-4 text-6xl font-normal tracking-tighter text-accent md:text-8xl lg:text-9xl min-h-32 lg:min-h-72">
                     <span id="full_name"></span><span class="cursor inline-block animate-wiggle"> |</span>
+                    <br>
                     <span class="mb-6 text-lg font-normal tracking-tighter text-accent md:text-3xl lg:text-5xl">
                         <span id="role"></span><span class="cursor inline-block animate-wiggle"> |</span>
                     </span>

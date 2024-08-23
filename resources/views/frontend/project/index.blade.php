@@ -68,7 +68,7 @@
     {{-- section banner end --}}
 
     {{-- section project lists start --}}
-    <section class="bg-secondary1 bg-blend-multiply relative w-auto py-12 md:py-16">
+    <section class="bg-secondary1 bg-blend-multiply relative w-auto py-12 md:py-16 min-h-screen">
         <div class="mx-auto max-w-screen-2xl px-4 text-start">
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-auto gap-4">
                 @forelse ($projectData as $project)
