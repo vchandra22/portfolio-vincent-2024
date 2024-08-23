@@ -13,7 +13,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://vincent-space.vercel.app/",
+        "APP_URL": "https://vincent-space-app.vercel.app/",
         "APP_KEY": "base64:s4ZGBiJBoFVlJiedF/QntlCkieayhAiAphKiw0TuYB4=",
 
         "DB_CONNECTION": "mysql",
