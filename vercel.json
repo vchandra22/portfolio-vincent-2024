@@ -4,6 +4,16 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
+    "builds": [
+    {
+        "src": "public/index.php",
+        "use": "@vercel/php"
+        },
+        {
+        "src": "resources/css/app.css",
+        "use": "@vercel/static"
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
@@ -13,7 +23,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://vincent-techspace-app.vercel.app/",
+        "APP_URL": "https://vincent-webspace.vercel.app/",
         "APP_KEY": "base64:s4ZGBiJBoFVlJiedF/QntlCkieayhAiAphKiw0TuYB4=",
 
         "DB_CONNECTION": "mysql",
