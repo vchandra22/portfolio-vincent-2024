@@ -26,13 +26,11 @@
 
 @section('content')
     {{-- jumbotron start --}}
-    <section class="bg-primary bg-blend-multiply relative min-h-screen w-auto">
+    <section class="bg-primary bg-blend-multiply relative h-full w-auto">
         <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
             <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover" width="100" height="100">
-            <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
-                class="h-2/3 w-2/3 overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4 max-w-screen-2xl w-full mx-auto relative z-30">
             <div class="px-4 mx-auto text-start py-3 md:py-4 lg:py-8 xl:py-20">
@@ -117,7 +115,7 @@
     {{-- jumbotron end --}}
 
     {{-- about me start --}}
-    <section class="bg-primary bg-blend-multiply relative min-h-screen w-auto pb-8 md:pb-2 xl:pb-20">
+    <section class="bg-primary bg-blend-multiply relative h-full w-auto pb-8 md:pb-2 xl:pb-20">
         <div class="min-h-screen mx-auto max-w-screen-2xl px-2 text-start">
             <h2 class="mb-8 text-5xl font-normal tracking-tighter text-accent py-4 md:py-8 lg:py-12 xl:py-16 md:text-5xl lg:text-7xl"
                 data-aos="fade" data-aos-delay="300" data-aos-duration="300" data-aos-easing="ease-in-out"
