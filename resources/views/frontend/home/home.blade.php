@@ -78,7 +78,7 @@
                         @forelse ($techData as $item)
                             <div
                                 class="bg-transparent border border-secondary1 rounded-lg m-auto w-full h-full p-4 flex justify-center items-center">
-                                <img src="{{ $item->gambar ? asset('storage/icon/' . $item->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                                <img src="{{ $item->gambar ? asset('resources/storage/icon/' . $item->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                     class="w-10 h-10 md:w-20 md:h-20" width="100" height="100"
                                     alt="{{ $item->gambar }}">
                             </div>
@@ -97,7 +97,7 @@
                         <a href="{{ $social->link }}" target="__blank"
                             class="grid grid-cols-2 md:grid-cols-3 items-center justify-center h-full mx-auto px-8 rounded-md bg-secondary2 hover:bg-accent">
                             <div>
-                                <img src="{{ $social->gambar ? asset('storage/icon/' . $social->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                                <img src="{{ $social->gambar ? asset('resources/storage/icon/' . $social->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                     class="w-10 h-10 md:w-14 md:h-14" alt="{{ $social->gambar }}" width="100"
                                     height="100">
                             </div>
@@ -126,7 +126,7 @@
                 <div class="bg-gradient-to-b from-transparent to-accent border-2 border-secondary1 rounded-lg mx-auto xl:mx-0"
                     data-aos="fade" data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out"
                     data-aos-once="true">
-                    <img src="{{ $userData->profile_pict ? asset('storage/img/' . $userData->profile_pict) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                    <img src="{{ $userData->profile_pict ? asset('resources/storage/img/' . $userData->profile_pict) : asset('resources/img/logo-vincent-portfolio.png') }}"
                         class="w-full mx-auto object-cover overflow-hidden" width="100" height="100"
                         alt="php icon">
                 </div>
@@ -200,7 +200,7 @@
                 @forelse ($projectData as $project)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"
                         data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-once="true">
-                        <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                        <img src="{{ $project->gambar ? asset('resources/storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                             class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
                             height="100" alt="#">
                         <div
