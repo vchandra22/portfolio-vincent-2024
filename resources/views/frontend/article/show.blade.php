@@ -62,7 +62,7 @@
                 data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="false">
                 <div class="col-span-2 w-full">
                     <div>
-                        <img src="{{ $detailArticle->gambar ? asset('storage/img/' . $detailArticle->gambar) : asset('frontend/resources/img/sigma-logo-full.png') }}"
+                        <img src="{{ $detailArticle->gambar ? asset('resources/storage/img/' . $detailArticle->gambar) : asset('frontend/resources/img/sigma-logo-full.png') }}"
                             class="object-cover w-full h-full" width="100" height="100"
                             alt="{{ $detailArticle->judul }}">
                     </div>
@@ -77,7 +77,7 @@
                     <div class="mx-auto flex flex-col gap-3">
                         @forelse ($articleData as $article)
                             <div class="relative w-full h-56 lg:h-56 bg-transparent">
-                                <img src="{{ $article->gambar ? asset('storage/img/' . $article->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                                <img src="{{ $article->gambar ? asset('resources/storage/img/' . $article->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                     class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
                                     height="100" alt="#">
                                 <div

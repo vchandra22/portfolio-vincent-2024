@@ -93,7 +93,7 @@
                                         <a href="{{ $social->link }}" target="__blank"
                                             class="flex justify-start items-center gap-0" target="_blank">
                                             <div class="bg-secondary2 p-4 rounded-full z-20 border border-secondary1">
-                                                <img src="{{ $social->gambar ? asset('storage/icon/' . $social->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                                                <img src="{{ $social->gambar ? asset('resources/storage/icon/' . $social->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                                     class="text-secondary2 w-5 h-5 md:w-8 md:h-8" width="100"
                                                     height="100" alt="{{ $social->gambar }}">
                                             </div>

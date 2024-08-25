@@ -74,7 +74,7 @@
                 @forelse ($projectData as $project)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"
                         data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-once="true">
-                        <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                        <img src="{{ $project->gambar ? asset('resources/storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                             class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
                             height="100" alt="{{ $project->gambar }}">
                         <div
