@@ -11,7 +11,7 @@
     <meta property="og:title" content="Portfolio Vincent Chandra Trie Novan">
     <meta property="og:description"
         content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
-    <meta property="og:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+    <meta property="og:image" content="{{ asset('resources/img/logo-vincent-portfolio.png') }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
     <meta property="og:site_name" content="{{ get_app_name() }}">
@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="Portfolio Vincent Chandra Trie Novan">
     <meta name="twitter:description"
         content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
-    <meta name="twitter:image" content="{{ asset('assets/img/logo-vincent-portfolio.png') }}">
+    <meta name="twitter:image" content="{{ asset('resources/img/logo-vincent-portfolio.png') }}">
 @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
     <section class="bg-primary min-h-96 flex items-center justify-start w-auto relative">
         <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="300"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
-            <img src="{{ asset('assets/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
+            <img src="{{ asset('resources/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover" width="100" height="100">
         </div>
         <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
@@ -74,7 +74,7 @@
                 @forelse ($projectData as $project)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"
                         data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-once="true">
-                        <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                        <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                             class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100"
                             height="100" alt="{{ $project->gambar }}">
                         <div

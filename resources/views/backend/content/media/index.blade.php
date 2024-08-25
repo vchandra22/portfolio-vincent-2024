@@ -44,7 +44,7 @@
                                     </p>
                                 </td>
                                 <td class="px-4 py-4 mx-auto">
-                                    <img src="{{ $media->gambar ? asset('storage/icon/' . $media->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                    <img src="{{ $media->gambar ? asset('storage/icon/' . $media->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                         class="w-1/3" alt="{{ $media->gambar }}">
                                 </td>
                                 <td class="px-4 py-4">

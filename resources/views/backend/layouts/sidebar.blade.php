@@ -14,7 +14,7 @@
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-primary border-r border-r-secondary1">
         <a href="{{ route('main.index') }}" class="flex items-center ps-2.5 mb-8">
-            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-6 me-3 sm:h-12 "
+            <img src="{{ asset('resources/img/logo-vincent-portfolio.png') }}" class="h-6 me-3 sm:h-12 "
                 alt="Logo Portfolio Vincent Chandra" />
             <span class="self-center text-accent text-xl font-semibold whitespace-nowrap">Vincent_</span>
         </a>

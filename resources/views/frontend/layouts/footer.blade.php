@@ -1,7 +1,7 @@
 {{-- footer start --}}
 <footer class="bg-primary border-t border-secondary1 relative py-12 lg:py-0 w-full">
     <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden">
-        <img src="{{ asset('assets/img/bg-footer-portofolio-vincent.png') }}"
+        <img src="{{ asset('resources/img/bg-footer-portofolio-vincent.png') }}"
             alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover" width="100"
             height="100">
     </div>
@@ -9,7 +9,7 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('main.index') }}" class="flex flex-col justify-start items-start">
-                    <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" width="100" height="100"
+                    <img src="{{ asset('resources/img/logo-vincent-portfolio.png') }}" width="100" height="100"
                         class="h-28" alt="Logo Portfolio Vincent Chandra" />
                 </a>
             </div>
@@ -39,7 +39,7 @@
                                 <a href="{{ $social->link }}" target="__blank"
                                     class="flex justify-start items-center gap-2 hover:underline" target="_blank">
                                     <div class="bg-secondary2 p-0.5 rounded-full">
-                                        <img src="{{ $social->gambar ? asset('storage/icon/' . $social->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                        <img src="{{ $social->gambar ? asset('storage/icon/' . $social->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                             class="text-secondary2 w-3 h-3 md:w-5 md:h-5" width="100" height="100"
                                             alt="{{ $social->gambar }}">
                                     </div>

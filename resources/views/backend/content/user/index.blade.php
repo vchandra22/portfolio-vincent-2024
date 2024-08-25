@@ -38,7 +38,7 @@
                                     </p>
                                 </td>
                                 <td class="px-4 py-4 mx-auto">
-                                    <img src="{{ $tech->gambar ? asset('storage/icon/' . $tech->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                                    <img src="{{ $tech->gambar ? asset('storage/icon/' . $tech->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                                         class="w-1/4" alt="{{ $tech->gambar }}">
                                 </td>
                                 <td class="px-8">

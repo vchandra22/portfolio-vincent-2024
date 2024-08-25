@@ -11,7 +11,7 @@
         </div>
         <div class="grid grid-cols-1 mx-auto gap-4">
             <div class="relative w-full h-52 border-2 bg-primary border-accent rounded-lg">
-                <img src="{{ asset('assets/img/default-hero-image.webp') }}"
+                <img src="{{ asset('resources/img/default-hero-image.webp') }}"
                     class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100" height="100"
                     alt="Gambar Ilustrasi Media Social">
                 <div class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="relative w-full h-52 border-2 bg-primary border-accent rounded-lg">
-                <img src="{{ asset('assets/img/ilustrasi-media-sosial.jpg') }}"
+                <img src="{{ asset('resources/img/ilustrasi-media-sosial.jpg') }}"
                     class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100" height="100"
                     alt="Gambar Ilustrasi Media Social">
                 <div class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="relative w-full h-52 border-2 bg-primary border-accent rounded-lg">
-                <img src="{{ asset('assets/img/illustration-image-role-developer.webp') }}"
+                <img src="{{ asset('resources/img/illustration-image-role-developer.webp') }}"
                     class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100" height="100"
                     alt="#">
                 <div class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="relative w-full h-52 border-2 bg-primary border-accent rounded-lg">
-                <img src="{{ asset('assets/img/illustration-image-discuss-10.webp') }}"
+                <img src="{{ asset('resources/img/illustration-image-discuss-10.webp') }}"
                     class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100" height="100"
                     alt="#">
                 <div class="absolute top-0 right-0 h-full bg-gradient-to-r w-full from-accent to-transparent bg-opacity-20">

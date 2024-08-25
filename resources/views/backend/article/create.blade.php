@@ -143,6 +143,6 @@
     </script>
 
     @push('script')
-        <script src="{{ asset('assets/js/custom/image-preview.js') }}"></script>
+        <script src="{{ asset('resources/js/custom/image-preview.js') }}"></script>
     @endpush
 @endsection

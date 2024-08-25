@@ -5,7 +5,7 @@
     <section class="min-h-96 flex items-center justify-start w-auto relative">
         <div class="bg-primary absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
-            <img src="{{ asset('assets/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
+            <img src="{{ asset('resources/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover">
         </div>
         <div class="max-w-screen-2xl min-h-screen mx-auto z-20">

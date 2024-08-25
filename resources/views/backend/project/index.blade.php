@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-auto gap-4">
             @forelse ($projectData as $project)
                 <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg">
-                    <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('assets/img/logo-vincent-portfolio.png') }}"
+                    <img src="{{ $project->gambar ? asset('storage/img/' . $project->gambar) : asset('resources/img/logo-vincent-portfolio.png') }}"
                         class="h-full w-full overflow-hidden object-cover mx-auto rounded-lg" width="100" height="100"
                         alt="{{ $project->gambar }}">
                     <div

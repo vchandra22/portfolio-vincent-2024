@@ -2,7 +2,7 @@
 <nav class="hidden lg:block bg-primary sticky top-0 z-40 w-full">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="{{ route('main.index') }}" class="flex items-center space-x-3 rtl:space-x-reverse p-0">
-            <img src="{{ asset('assets/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100" height="100"
+            <img src="{{ asset('resources/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100" height="100"
                 alt="Logo Portfolio Vincent" />
         </a>
         <div class="w-full md:block md:w-auto">

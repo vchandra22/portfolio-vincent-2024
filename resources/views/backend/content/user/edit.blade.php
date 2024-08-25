@@ -99,10 +99,10 @@
                     <div class="upload-img-box h-auto w-full md:max-w-sm">
                         @if ($detailUser->profile_pict != null && $detailUser->profile_pict != '')
                             <img class="h-56 w-full overflow-y-hidden border-abu-500 rounded-sm border-2"
-                                src="{{ $detailUser->profile_pict ? asset('storage/icon/' . $detailUser->profile_pict) : asset('assets/img/logo-vincent-portfolio.png') }}">
+                                src="{{ $detailUser->profile_pict ? asset('storage/icon/' . $detailUser->profile_pict) : asset('resources/img/logo-vincent-portfolio.png') }}">
                         @else
                             <img
-                                src="{{ $detailUser->profile_pict ? asset('storage/icon/' . $detailUser->profile_pict) : asset('assets/img/logo-vincent-portfolio.png') }}">
+                                src="{{ $detailUser->profile_pict ? asset('storage/icon/' . $detailUser->profile_pict) : asset('resources/img/logo-vincent-portfolio.png') }}">
                         @endif
                         <input type="file" name="profile_pict" id="profile_pict" accept="image/*"
                             class="mt-2 w-full text-sm text-accent border border-secondary1 cursor-pointer bg-black hover:bg-secondary3 focus:ring-accent focus:border-accent"
@@ -133,6 +133,6 @@
     </script>
 
     @push('script')
-        <script src="{{ asset('assets/js/custom/image-preview.js') }}"></script>
+        <script src="{{ asset('resources/js/custom/image-preview.js') }}"></script>
     @endpush
 @endsection
