@@ -87,7 +87,7 @@
                                 <p class="text-sm text-white text-start pt-1">
                                     {{ convertDate($project->created_at) }}</p>
                                 <h4
-                                    class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-12 lg:min-h-20">
+                                    class="text-white font-regular text-start text-md md:text-lg lg:text-xl tracking-tight leading-6 min-h-12 lg:min-h-20 overflow-hidden line-clamp-3">
                                     {{ $project->short_description }}
                                 </h4>
                                 <a href="{{ route('project.detail', $project->slug) }}"
