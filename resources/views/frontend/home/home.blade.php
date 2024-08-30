@@ -27,10 +27,16 @@
 @section('content')
     {{-- jumbotron start --}}
     <section class="bg-primary bg-blend-multiply relative h-full w-full py-12 lg:py-0">
-        <div class="absolute bottom-0 top-0 left-0 right-0 z-0" data-aos="fade" data-aos-delay="200"
+        <div class="absolute bottom-0 top-0 left-0 right-0 z-10" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
             <img src="{{ asset('resources/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover" width="100" height="100">
+        </div>
+        <div class="absolute bottom-0 top-0 left-0 right-0 z-0" data-aos="fade" data-aos-delay="200"
+            data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
+            <img src="{{ asset('resources/img/bg-grid-portofolio-vincent.png') }}"
+                alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover"
+                width="100" height="100">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4 max-w-screen-xl w-full mx-auto relative z-30">
             <div class="px-4 mx-auto text-start py-3 md:py-4 lg:py-8 xl:py-20">

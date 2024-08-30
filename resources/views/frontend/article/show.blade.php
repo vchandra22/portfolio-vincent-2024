@@ -3,10 +3,16 @@
 @section('content')
     {{-- section banner start --}}
     <section class="bg-primary min-h-96 flex items-center justify-start relative w-full">
-        <div class="absolute bottom-0 top-0 left-0 -right-0 z-0 overflow-hidden" data-aos="fade" data-aos-delay="200"
+        <div class="absolute bottom-0 top-0 left-0 -right-0 z-10 overflow-hidden" data-aos="fade" data-aos-delay="200"
             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="false">
             <img src="{{ asset('resources/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover" width="100" height="100">
+        </div>
+        <div class="absolute bottom-0 top-0 left-0 right-0 z-0" data-aos="fade" data-aos-delay="200"
+            data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true">
+            <img src="{{ asset('resources/img/bg-grid-portofolio-vincent.png') }}"
+                alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover"
+                width="100" height="100">
         </div>
         <div class="h-full my-auto mx-auto max-w-screen-xl relative z-30 w-full">
             {{-- breadcrumbs start --}}

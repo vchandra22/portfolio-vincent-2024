@@ -42,7 +42,7 @@
     @include('frontend.layouts.navbar')
 
     {{-- content --}}
-    <section class="px-8 lg:px-0">
+    <section class="px-4 lg:px-0">
         @yield('content')
     </section>
 
