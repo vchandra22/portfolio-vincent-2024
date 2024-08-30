@@ -134,7 +134,7 @@
                 <div class="bg-gradient-to-b from-transparent to-accent border-2 border-secondary1 rounded-lg mx-auto xl:mx-0"
                     data-aos="fade" data-aos-delay="600" data-aos-duration="600" data-aos-easing="ease-in-out"
                     data-aos-once="true">
-                    <img src="{{ $userData->profile_pict ? asset('resources/storage/img/' . $userData->profile_pict) : asset('resources/img/logo-vincent-portfolio.png') }}"
+                    <img src="{{ asset('resources/img/foto-batik-bw.png') }}"
                         class="w-full mx-auto object-cover overflow-hidden" width="100" height="100"
                         alt="vincent chandra trie novan">
                 </div>
