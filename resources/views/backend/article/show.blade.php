@@ -39,7 +39,7 @@
 
         {{-- section content start --}}
         <section class="bg-black py-12 md:py-16 w-full">
-            <div class="mx-auto max-w-screen-2xl w-full">
+            <div class="mx-auto max-w-screen-xl w-full">
                 <div class="mb-4">
                     <div class="flex gap-4">
                         <a href="{{ route('backend.edit_article', $detailArticle->slug) }}"

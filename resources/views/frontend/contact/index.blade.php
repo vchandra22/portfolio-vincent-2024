@@ -32,7 +32,7 @@
             <img src="{{ asset('resources/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover" width="100" height="100">
         </div>
-        <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
+        <div class="h-full w-full my-auto mx-auto max-w-screen-xl relative z-30">
             {{-- breadcrumbs start --}}
             <nav class="flex" aria-label="Breadcrumb" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
@@ -69,7 +69,7 @@
 
     {{-- section contact start --}}
     <section class="bg-secondary1 bg-blend-multiply relative w-auto py-12 md:py-16">
-        <div class="mx-auto max-w-screen-2xl px-4 text-start">
+        <div class="mx-auto max-w-screen-xl px-4 text-start">
             <div class="grid grid-cols-1 md:grid-cols-2 mx-auto gap-8">
                 <div class="lg:sticky lg:top-20 lg:h-fit lg:z-10">
                     <h1 class="text-3xl md:text-5xl lg:text-7xl text-accent font-semibold text-start tracking-tighter mb-4">

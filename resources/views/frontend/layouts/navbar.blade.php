@@ -1,9 +1,9 @@
 {{-- navbar-lg start --}}
-<nav class="hidden lg:block bg-primary sticky top-0 z-40 w-full">
+<nav class="hidden md:block bg-primary sticky top-0 z-40 w-full px-8">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="{{ route('main.index') }}" class="flex items-center space-x-3 rtl:space-x-reverse p-0">
-            <img src="{{ asset('resources/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100" height="100"
-                alt="Logo Portfolio Vincent" />
+            <img src="{{ asset('resources/img/logo-vincent-portfolio.png') }}" class="h-14 w-14" width="100"
+                height="100" alt="Logo Portfolio Vincent" />
         </a>
         <div class="w-full md:block md:w-auto">
             <ul
@@ -45,7 +45,7 @@
 {{-- navbar-lg end --}}
 
 {{-- navbar-sm start --}}
-<nav class="block lg:hidden z-50 bottom-0 w-full">
+<nav class="block md:hidden z-50 bottom-0 w-full">
     <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-primary border-t border-secondary1">
         <div class="grid h-full max-w-full grid-cols-4 w-full mx-auto font-medium">
             <a href="{{ route('main.index') }}"

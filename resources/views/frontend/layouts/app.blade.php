@@ -37,12 +37,14 @@
     <title>{{ __(@$pageTitle) }} | {{ get_app_name() }}</title>
 </head>
 
-<body class="antialiased bg-primary">
+<body class="bg-primary">
     {{-- navbar --}}
     @include('frontend.layouts.navbar')
 
     {{-- content --}}
-    @yield('content')
+    <section class="px-8 lg:px-0">
+        @yield('content')
+    </section>
 
     {{-- footer --}}
     @include('frontend.layouts.footer')

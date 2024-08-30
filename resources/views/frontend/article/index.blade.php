@@ -32,7 +32,7 @@
             <img src="{{ asset('resources/img/banner-bg-light.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover">
         </div>
-        <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
+        <div class="h-full w-full my-auto mx-auto max-w-screen-xl relative z-30">
             {{-- breadcrumbs start --}}
             <nav class="flex" aria-label="Breadcrumb" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
@@ -69,7 +69,7 @@
 
     {{-- section project lists start --}}
     <section class="bg-secondary1 bg-blend-multiply relative w-auto py-12 md:py-16">
-        <div class="mx-auto max-w-screen-2xl px-4 text-start">
+        <div class="mx-auto max-w-screen-xl px-4 text-start">
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-auto gap-4">
                 @forelse ($articleData as $article)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"

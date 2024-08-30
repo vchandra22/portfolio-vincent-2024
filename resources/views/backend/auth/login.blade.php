@@ -8,7 +8,7 @@
             <img src="{{ asset('resources/img/bg-portofolio-vincent.png') }}" alt="background jumbotron portofolio vincent"
                 class="h-full w-full overflow-hidden object-cover">
         </div>
-        <div class="max-w-screen-2xl min-h-screen mx-auto z-20">
+        <div class="max-w-screen-xl min-h-screen mx-auto z-20">
             @if (session()->has('loginError'))
                 <div id="toast-danger"
                     class="fixed flex items-center w-full max-w-xs p-4 mb-4 text-accent border border-accent bg-primary top-5 right-5 mt-[4.4rem]"
@@ -62,7 +62,7 @@
                     </button>
                 </div>
             @endif
-            <div class="py-8 px-4 md:px-16 mx-auto max-w-screen-2xl lg:py-44 gap-0 lg:gap-16">
+            <div class="py-8 px-4 md:px-16 mx-auto max-w-screen-xl lg:py-44 gap-0 lg:gap-16">
                 <div class="md:flex flex-col justify-center text-start lg:text-start">
                     <div>
                         <div class="mx-auto w-full lg:max-w-xl p-6 space-y-1 sm:py-12 border bg-primary border-accent">

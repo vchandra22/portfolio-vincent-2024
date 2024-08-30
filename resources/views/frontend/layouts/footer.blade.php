@@ -1,5 +1,5 @@
 {{-- footer start --}}
-<footer class="bg-primary border-t border-secondary1 relative py-12 lg:py-0 w-full">
+<footer class="bg-primary border-t border-secondary1 relative py-12 lg:py-0 w-full px-8">
     <div class="absolute bottom-0 top-0 left-0 right-0 z-0 overflow-hidden">
         <img src="{{ asset('resources/img/bg-footer-portofolio-vincent.png') }}"
             alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover" width="100"
