@@ -1,13 +1,12 @@
 name: portfolio-vincent-2024
 
 services:
-
     ####################################################################################################
     # PHP
     ####################################################################################################
     php:
         build: .docker/php
-        container_name: php
+        container_name: php-porto
         ports:
             - 5173:5173
         volumes:
@@ -18,7 +17,7 @@ services:
     ####################################################################################################
     nginx:
         image: nginx
-        container_name: nginx-webserver
+        container_name: nginx-webserver-porto
         ports:
             - 80:80
         volumes:
@@ -33,7 +32,7 @@ services:
     ####################################################################################################
     db:
         image: mysql:8.1
-        container_name: database
+        container_name: database-porto
         ports:
             - 3306:3306
         volumes:
@@ -52,7 +51,7 @@ services:
     ####################################################################################################
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
+        container_name: phpmyadmin-porto
         ports:
             - 8088:80
         links:
