@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://vincent-webspace.vercel.app/sitemap.xml
