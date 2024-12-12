@@ -4,7 +4,7 @@
     <meta name="description"
         content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
     <meta name="keywords"
-        content="web developer, laravel developer, fresh graduate web developer, vincent chandra, aplikasi website">
+        content="web developer, laravel developer, fresh graduate web developer, vincent chandra, aplikasi website, vincent chandra trie novan ub, vincent chandra web developer, portofolio vincent chandra, cv vincent chandra, vincent chandra website, portfolio vincent chandra, vincent chandra trie novan, vincent website developer, vincent chandra trie novan portfolio">
 
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:type" content="Artikel Portfolio Web Developer Vincent">
