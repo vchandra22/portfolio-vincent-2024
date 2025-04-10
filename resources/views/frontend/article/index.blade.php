@@ -38,7 +38,7 @@
                 alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover"
                 width="100" height="100">
         </div>
-        <div class="h-full w-full my-auto mx-auto max-w-screen-xl relative z-30">
+        <div class="h-full w-full my-auto mx-auto max-w-screen-2xl relative z-30">
             {{-- breadcrumbs start --}}
             <nav class="flex" aria-label="Breadcrumb" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
@@ -64,7 +64,7 @@
             <div class="w-1/3 py-4" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
                 <h1
-                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl m-4 lg:m-0">
+                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-7xl lg:text-8xl m-4 lg:m-0">
                     {{ $pageTitle }}_
                 </h1>
             </div>
@@ -75,7 +75,7 @@
 
     {{-- section project lists start --}}
     <section class="bg-secondary1 bg-blend-multiply relative w-auto py-12 md:py-16">
-        <div class="mx-auto max-w-screen-xl px-4 text-start">
+        <div class="mx-auto max-w-screen-2xl px-4 text-start">
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-auto gap-4">
                 @forelse ($articleData as $article)
                     <div class="relative w-full h-64 lg:h-72 border-2 bg-primary border-accent rounded-lg" data-aos="fade"
@@ -88,7 +88,9 @@
                             <div class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
                                 <h3
                                     class="text-white font-semibold text-start text-4xl lg:text-5xl overflow-hidden line-clamp-2">
-                                    {{ $article->title }}
+                                    <a href="{{ route('article.detail', $article->slug) }}">
+                                        {{ $article->title }}
+                                    </a>
                                 </h3>
                                 <p class="text-sm text-white text-start pt-1">
                                     {{ convertDate($article->created_at) }}</p>

@@ -9,8 +9,7 @@
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:type" content="Artikel Portfolio Web Developer Vincent">
     <meta property="og:title" content="Portfolio Vincent Chandra Trie Novan">
-    <meta property="og:description"
-        content="Vincent Chandra Trie Novan specialized in web development and UI design. Proficient in creating responsive and user-centric websites and applications.">
+    <meta property="og:description" content="Vincent Chandra Trie Novan merupakan pengembang web dan desainer UI yang berfokus pada pembuatan situs web dan aplikasi responsif serta user-centric, dengan pengalaman dalam menciptakan solusi digital yang efisien dan inovatif.">
     <meta property="og:image" content="{{ asset('resources/img/logo-vincent-portfolio.png') }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
@@ -38,7 +37,7 @@
                 alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover"
                 width="100" height="100">
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4 max-w-screen-xl w-full mx-auto relative z-30">
+        <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4 max-w-screen-2xl w-full mx-auto relative z-30">
             <div class="px-4 mx-auto text-start py-3 md:py-4 lg:py-8 xl:py-20">
                 <h1 class="mb-4 min-h-32 lg:min-h-72">
                     <span id="full_name" class="font-normal tracking-tighter text-accent text-9xl"></span>
@@ -96,9 +95,9 @@
                 </div>
             </div>
         </div>
-        <div class="px-4 text-start max-w-screen-xl mx-auto w-full relative z-30 py-8 lg:py-16" data-aos="fade"
+        <div class="px-4 text-start max-w-screen-2xl mx-auto w-full relative z-30 py-8 lg:py-16" data-aos="fade"
             data-aos-delay="900" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full justify-between gap-2 md:grid-4 lg:grid-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full justify-center gap-2 md:grid-4 lg:grid-8">
                 @foreach ($socialData as $social)
                     <div class="h-16 md:h-20">
                         <a href="{{ $social->link }}" target="__blank"
@@ -123,7 +122,7 @@
 
     {{-- about me start --}}
     <section class="bg-primary bg-blend-multiply relative h-full w-auto pb-8 md:pb-2 xl:pb-20">
-        <div class="min-h-screen mx-auto max-w-screen-xl px-2 text-start">
+        <div class="min-h-screen mx-auto max-w-screen-2xl px-2 text-start">
             <h2 class="mb-8 text-5xl font-normal tracking-tighter text-accent py-4 md:py-8 lg:py-12 xl:py-16 md:text-5xl lg:text-7xl"
                 data-aos="fade" data-aos-delay="300" data-aos-duration="300" data-aos-easing="ease-in-out"
                 data-aos-once="true">
@@ -156,7 +155,7 @@
 
     {{-- choose me start --}}
     <section class="bg-primary bg-blend-multiply relative w-auto">
-        <div class="pb-24 mx-auto max-w-screen-xl px-4 text-start">
+        <div class="pb-24 mx-auto max-w-screen-2xl px-4 text-start">
             <h2 class="mb-8 text-5xl font-normal tracking-tighter text-accent py-4 md:py-8 lg:py-12 xl:py-16 md:text-5xl lg:text-7xl"
                 data-aos="fade" data-aos-delay="300" data-aos-duration="600" data-aos-easing="ease-in-out"
                 data-aos-once="true">
@@ -198,7 +197,7 @@
 
     {{-- recent project start --}}
     <section class="bg-primary bg-blend-multiply relative min-h-screen w-auto py-12 md:py-16">
-        <div class="min-h-screen mx-auto max-w-screen-xl px-4 text-start">
+        <div class="min-h-screen mx-auto max-w-screen-2xl px-4 text-start">
             <h2 class="mb-8 text-5xl font-normal tracking-tighter text-accent py-4 md:py-8 lg:py-12 xl:py-16 md:text-5xl lg:text-7xl"
                 data-aos="fade" data-aos-delay="300" data-aos-duration="600" data-aos-easing="ease-in-out"
                 data-aos-once="true">
@@ -216,7 +215,9 @@
                             <div class="px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
                                 <h3
                                     class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
-                                    {{ $project->title }}
+                                    <a href="{{ route('project.detail', $project->slug) }}">
+                                        {{ $project->title }}
+                                    </a>
                                 </h3>
                                 <p class="text-sm text-white text-start pt-1">
                                     {{ convertDate($project->created_at) }}</p>
@@ -232,7 +233,8 @@
                                         <path
                                             d="M11 4h2v12h2v2h-2v2h-2v-2H9v-2h2V4zM7 14v2h2v-2H7zm0 0v-2H5v2h2zm10 0v2h-2v-2h2zm0 0v-2h2v2h-2z"
                                             fill="currentColor" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>

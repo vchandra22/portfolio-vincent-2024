@@ -20,7 +20,7 @@ class MainIndexController extends Controller
         $data['pageTitle'] = 'Home';
         $data['userData'] = User::firstOrFail();
         $data['techData'] = TechStack::latest()->get();
-        $data['socialData'] = MediaSocial::latest()->get();
+        $data['socialData'] = MediaSocial::orderBy('created_at', 'asc')->get();
         $data['skillData'] = Skill::latest()->get();
         $data['projectData'] = Project::latest()->get();
 

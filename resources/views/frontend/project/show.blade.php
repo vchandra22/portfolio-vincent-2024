@@ -35,7 +35,7 @@
                 alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover"
                 width="100" height="100">
         </div>
-        <div class="h-full my-auto mx-auto max-w-screen-xl relative z-30 w-full">
+        <div class="h-full my-auto mx-auto max-w-screen-2xl relative z-30 w-full">
             {{-- breadcrumbs start --}}
             <nav class="flex" aria-label="Breadcrumb" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
@@ -70,7 +70,7 @@
             <div class="w-4/5 py-4 m-4 lg:m-0" data-aos="fade" data-aos-delay="600" data-aos-duration="1000"
                 data-aos-easing="ease-in-out" data-aos-once="false">
                 <h1
-                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-8xl lg:text-9xl overflow-hidden line-clamp-2">
+                    class="mb-4 text-4xl font-normal text-start tracking-tighter text-accent md:text-6xl lg:text-7xl overflow-hidden line-clamp-2">
                     {{ $detailProject->title }}
                 </h1>
                 <p class="text-sm text-secondary2 text-start pt-2">Dipublikasi Tanggal:
@@ -84,7 +84,7 @@
 
     {{-- section content start --}}
     <section class="bg-secondary1 py-12 md:py-16 w-full">
-        <div class="mx-auto max-w-screen-xl w-full">
+        <div class="mx-auto max-w-screen-2xl w-full">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full" data-aos="fade" data-aos-delay="900"
                 data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="false">
                 <div class="lg:col-span-2 w-full">
@@ -113,7 +113,10 @@
                                         class="px-2 md:px-4 lg:px-8 py-4 md:w-96 h-full grid grid-cols-1 justify-start items-center w-full">
                                         <h4
                                             class="text-white font-regular text-start text-2xl md:text-4xl lg:text-5xl overflow-hidden line-clamp-2">
-                                            {{ $project->title }}</h4>
+                                            <a href="{{ route('project.detail', $project->slug) }}">
+                                                {{ $project->title }}
+                                            </a>
+                                        </h4>
                                         <p
                                             class="text-white font-regular text-start text-md tracking-tight leading-4 overflow-hidden line-clamp-3">
                                             {{ $project->short_description }}

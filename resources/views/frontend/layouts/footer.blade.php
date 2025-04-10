@@ -80,7 +80,7 @@
         </div>
         <hr class="my-4 border-secondary1 sm:mx-auto lg:my-6" />
         <div class="sm:flex sm:items-center sm:justify-center">
-            <span class="text-xs md:text-md lg:text-lg text-secondary2 text-center">© 2024 <a href="#"
+            <span class="text-xs md:text-md lg:text-lg text-secondary2 text-center">© 2025 <a href="/"
                     class="hover:underline">Portfolio
                     Vincent_</a>
             </span>
