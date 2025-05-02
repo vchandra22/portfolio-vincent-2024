@@ -5,7 +5,7 @@
             alt="background jumbotron portofolio vincent" class="h-full w-full overflow-hidden object-cover" width="100"
             height="100">
     </div>
-    <div class="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8 relative z-30">
+    <div class="mx-auto w-full p-4 py-6 lg:py-8 relative z-30">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('main.index') }}" class="flex flex-col justify-start items-start">
