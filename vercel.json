@@ -22,7 +22,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://vincent-webspace.vercel.app/",
         "APP_KEY": "base64:s4ZGBiJBoFVlJiedF/QntlCkieayhAiAphKiw0TuYB4=",
 
